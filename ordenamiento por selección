@@ -6,28 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        selectionSort(inputArr) { 
-            let n = inputArr.length;
+        function selectionSort() { 
+            var sequence = [5,9,4,3,8,7,1,0];
+            n = 8;
                 
             for(let i = 0; i < n; i++) {
-                // Finding the smallest number in the subarray
+                // Buscamos el número menor
                 let min = i;
                 for(let j = i+1; j < n; j++){
-                    if(inputArr[j] < inputArr[min]) {
+                    if(sequence[j] < sequence[min]) {
                         min=j; 
                     }
                  }
                  if (min != i) {
-                     // Swapping the elements
-                     let tmp = inputArr[i]; 
-                     inputArr[i] = inputArr[min];
-                     inputArr[min] = tmp;      
+                     // Intercambiamos los elementos
+                     let tmp = sequence[i]; 
+                     sequence[i] = sequence[min];
+                     sequence[min] = tmp;      
                 }
             }
-            return inputArr;
+            resultado = sequence;
+            document.getElementById("lblResultado").innerHTML = resultado;
         }
     </script>
 </head>
 <body>
+    <center><h3>Ordenamiento de datos por selección👀</h3></center>
+    <center><h2>Datos: 5 - 9 - 4 - 3 - 8 - 7 - 1 - 0</h2></center>
+    <center><button type="button" onclick="selectionSort()">Ordenar</button></center> <br>
+    <center><p id="lblResultado" ></p></center>
+    
 </body>
 </html>
